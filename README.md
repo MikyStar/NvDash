@@ -50,3 +50,5 @@ git clone https://github.com/MikyStar/NvDash ~/.config/nvim/
 - `<leader>fm`: Format doc
 - `<leader>ca`: LSP code action
 - `K`: LSP hover
+
+- `(in NvimTree) g?`: Help on NvimTree
