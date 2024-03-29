@@ -23,7 +23,6 @@ git clone https://github.com/MikyStar/NvDash ~/.config/nvim/
 ### Commands
 
 - `:Glow`: Markdown preview
-- `:Flog`: Git tree
 - `:Outline`: Show code outline
 
 ### Mappings
