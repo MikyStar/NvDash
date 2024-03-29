@@ -2,6 +2,14 @@
 
 A customized [NvChad](https://nvchad.com)
 
+## Install
+
+Requires NeoVim [builded from source](https://github.com/neovim/neovim/blob/master/BUILD.md#quick-start)
+
+```sh
+git clone https://github.com/MikyStar/NvDash ~/.config/nvim/
+```
+
 ## Added plugins
 
 - [hop](https://github.com/smoka7/hop.nvim)
