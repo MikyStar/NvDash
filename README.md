@@ -31,7 +31,7 @@ git clone https://github.com/MikyStar/NvDash ~/.config/nvim/
 - `<leader>hs`: Hop search
 - `<leader>hw`: Hop word
 
-- `<leader>lg`: LazyGit _(Q to exit)_
+- `<leader>lg`: LazyGit _(q to exit)_
 
 - `<leader>fm`: Format doc
 - `<leader>ca`: LSP code action
