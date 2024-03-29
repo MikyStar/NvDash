@@ -4,7 +4,21 @@ A customized [NvChad](https://nvchad.com)
 
 ## Install
 
-Requires NeoVim [builded from source](https://github.com/neovim/neovim/blob/master/BUILD.md#quick-start)
+1. [NeoVim nightly](https://github.com/neovim/neovim/blob/master/BUILD.md#quick-start)
+
+```sh
+cd $HOME/Repos
+git clone https://github.com/neovim/neovim
+cd neovim
+make CMAKE_INSTALL_PREFIX=$HOME/Repos/neovim # If already builded run 'make distclean'
+make install
+sudo -s make install
+```
+2. [LazyGit](https://github.com/jesseduffield/lazygit)
+
+[Install](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#binary-releases)
+
+3. Import NvDash config
 
 ```sh
 git clone https://github.com/MikyStar/NvDash ~/.config/nvim/
