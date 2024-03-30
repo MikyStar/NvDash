@@ -1,4 +1,3 @@
-
 local hop = require("hop")
 
 hop.setup()
@@ -29,7 +28,7 @@ keymap("n", "<leader><leader>)", "<cmd>lua require'hop'.hint_patterns({}, ')')<c
 keymap("n", "<leader><leader>{", "<cmd>lua require'hop'.hint_patterns({}, '{')<cr>", opts)
 keymap("n", "<leader><leader>}", "<cmd>lua require'hop'.hint_patterns({}, '}')<cr>", opts)
 
-keymap("n", "<leader><leader>[", "<cmd>lua require'hop'.hint_patterns({}, '[')<cr>", opts)
+keymap("n", "<leader><leader>[", "<cmd>lua require'hop'.hint_patterns({}, '[[[]]')<cr>", opts)
 keymap("n", "<leader><leader>]", "<cmd>lua require'hop'.hint_patterns({}, ']')<cr>", opts)
 
 keymap("n", "<leader><leader><", "<cmd>lua require'hop'.hint_patterns({}, '<')<cr>", opts)
