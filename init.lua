@@ -28,3 +28,7 @@ end
 dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
 require "plugins"
+
+vim.api.nvim_create_user_command("ClearBuffers", function()
+  vim.cmd("%bd")
+end, {})
