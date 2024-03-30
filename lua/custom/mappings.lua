@@ -3,12 +3,17 @@ local M = {}
 
 M.general = {
   n = {
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<C-e>"] = { "5<C-e>" },
     ["<C-y>"] = { "5<C-y>" },
+
+    ["<S-Down>"] = { ":m .+1<CR>==" },
+    ["<S-Up>"] = { ":m .-2<CR>==" },
   },
   v = {
     [">"] = { ">gv", "indent"},
+
+    ["<S-Down>"] = { ":m '>+1<CR>gv=gv" },
+    ["<S-Up>"] = { ":m '<-2<CR>gv=gv" },
   },
 }
 
