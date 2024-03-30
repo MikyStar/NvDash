@@ -101,6 +101,16 @@ local plugins = {
     },
   },
 
+  {
+    "tzachar/local-highlight.nvim",
+    lazy = false,
+    config = function()
+      require("local-highlight").setup {
+        file_types = nil,
+      }
+    end,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
