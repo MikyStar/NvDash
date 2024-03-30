@@ -8,6 +8,9 @@ M.general = {
 
     ["<S-Down>"] = { ":m .+1<CR>==" },
     ["<S-Up>"] = { ":m .-2<CR>==" },
+
+    ["<leader>sv"] = { "<cmd> vsplit <CR>" },
+    ["<leader>sh"] = { "<cmd> split <CR>" },
   },
   v = {
     [">"] = { ">gv", "indent"},
