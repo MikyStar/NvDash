@@ -1,3 +1,4 @@
+
 local hop = require("hop")
 
 hop.setup()
@@ -11,11 +12,32 @@ keymap("n", "<A-q>", "q", opts) -- Macro q remap
 keymap("x", "<A-q>", "q", opts)
 keymap("n", "?", "/", nosilent_opts)
 
+-- Base moves
+
 keymap("x", "<leader><leader>w", "<cmd>HopWord<cr>", opts)
 keymap("n", "<leader><leader>w", "<cmd>HopWord<cr>", opts)
+keymap("n", "<leader><leader>W", "<cmd>HopWordMW<cr>", opts) -- multiwindow
+
 keymap("n", "<leader><leader>l", "<cmd>HopLineStart<cr>", opts)
 keymap("x", "<leader><leader>l", "<cmd>HopLineStart<cr>", opts)
-keymap("n", "<leader><leader>W", "<cmd>HopWordMW<cr>", opts)
+
+keymap("n", "<leader><leader>s", "<cmd>lua require'hop'.hint_patterns()<cr>", opts)
+
+keymap("n", "<leader><leader>(", "<cmd>lua require'hop'.hint_patterns({}, '(')<cr>", opts)
+keymap("n", "<leader><leader>)", "<cmd>lua require'hop'.hint_patterns({}, ')')<cr>", opts)
+
+keymap("n", "<leader><leader>{", "<cmd>lua require'hop'.hint_patterns({}, '{')<cr>", opts)
+keymap("n", "<leader><leader>}", "<cmd>lua require'hop'.hint_patterns({}, '}')<cr>", opts)
+
+keymap("n", "<leader><leader>[", "<cmd>lua require'hop'.hint_patterns({}, '[')<cr>", opts)
+keymap("n", "<leader><leader>]", "<cmd>lua require'hop'.hint_patterns({}, ']')<cr>", opts)
+
+keymap("n", "<leader><leader><", "<cmd>lua require'hop'.hint_patterns({}, '<')<cr>", opts)
+keymap("n", "<leader><leader>>", "<cmd>lua require'hop'.hint_patterns({}, '>')<cr>", opts)
+
+keymap("n", "<leader><leader>;", "<cmd>lua require'hop'.hint_patterns({}, ';')<cr>", opts)
+
+-- Improve 'f' and 'F'
 
 keymap(
 	"o",
@@ -29,14 +51,6 @@ keymap(
 	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = false })<cr>",
 	opts
 )
-
-keymap("n", "<leader><leader>s", "<cmd>lua require'hop'.hint_patterns()<cr>", opts)
-
-keymap("n", "<leader><leader>(", "<cmd>lua require'hop'.hint_patterns({}, '(')<cr>", opts)
-keymap("n", "<leader><leader>)", "<cmd>lua require'hop'.hint_patterns({}, ')')<cr>", opts)
-keymap("n", "<leader><leader>;", "<cmd>lua require'hop'.hint_patterns({}, ';')<cr>", opts)
-keymap("n", "<leader><leader><", "<cmd>lua require'hop'.hint_patterns({}, '<')<cr>", opts)
-keymap("n", "<leader><leader>>", "<cmd>lua require'hop'.hint_patterns({}, '>')<cr>", opts)
 
 local directions = require('hop.hint').HintDirection
 set('', 'f', function()

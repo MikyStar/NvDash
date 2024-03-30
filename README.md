@@ -42,8 +42,9 @@ git clone https://github.com/MikyStar/NvDash ~/.config/nvim/
 ### Mappings
 
 - `<leader>ch`: Show cheatsheat
-- `<leader>hs`: Hop search
-- `<leader>hw`: Hop word
+
+- `<leader><leader>s`: Hop search
+- `<leader><leader>w`: Hop word
 
 - `<leader>lg`: LazyGit _(q to exit)_
 
