@@ -19,6 +19,11 @@ M.on_attach = function(client, bufnr)
   if not utils.load_config().ui.lsp_semantic_tokens and client.supports_method "textDocument/semanticTokens" then
     client.server_capabilities.semanticTokensProvider = nil
   end
+
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    buffer = bufnr,
+    command = "EslintFixAll",
+  })
 end
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
