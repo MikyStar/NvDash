@@ -172,14 +172,14 @@ M.lspconfig = {
       "LSP definition type",
     },
 
-    ["<leader>ra"] = {
+    ["<leader>lr"] = {
       function()
         require("nvchad.renamer").open()
       end,
       "LSP rename",
     },
 
-    ["<leader>ca"] = {
+    ["<leader>la"] = {
       function()
         vim.lsp.buf.code_action()
       end,
@@ -200,14 +200,14 @@ M.lspconfig = {
       "Floating diagnostic",
     },
 
-    ["[d"] = {
+    ["<leader>lp"] = {
       function()
         vim.diagnostic.goto_prev { float = { border = "rounded" } }
       end,
       "Goto prev",
     },
 
-    ["]d"] = {
+    ["<leader>ln"] = {
       function()
         vim.diagnostic.goto_next { float = { border = "rounded" } }
       end,
@@ -244,7 +244,7 @@ M.lspconfig = {
   },
 
   v = {
-    ["<leader>ca"] = {
+    ["<leader>la"] = {
       function()
         vim.lsp.buf.code_action()
       end,
@@ -270,8 +270,7 @@ M.telescope = {
 
   n = {
     -- find
-    ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "Find files" },
-    ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
+    ["<leader>ff"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
     ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "Find buffers" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
