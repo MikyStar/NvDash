@@ -11,11 +11,11 @@ keymap("n", "<A-q>", "q", opts) -- Macro q remap
 keymap("x", "<A-q>", "q", opts)
 keymap("n", "?", "/", nosilent_opts)
 
-keymap("x", "<leader>hw", "<cmd>HopWord<cr>", opts)
-keymap("n", "<leader>hw", "<cmd>HopWord<cr>", opts)
-keymap("n", "<leader>hl", "<cmd>HopLineStart<cr>", opts)
-keymap("x", "<leader>hl", "<cmd>HopLineStart<cr>", opts)
-keymap("n", "<leader>hW", "<cmd>HopWordMW<cr>", opts)
+keymap("x", "<leader><leader>w", "<cmd>HopWord<cr>", opts)
+keymap("n", "<leader><leader>w", "<cmd>HopWord<cr>", opts)
+keymap("n", "<leader><leader>l", "<cmd>HopLineStart<cr>", opts)
+keymap("x", "<leader><leader>l", "<cmd>HopLineStart<cr>", opts)
+keymap("n", "<leader><leader>W", "<cmd>HopWordMW<cr>", opts)
 
 keymap(
 	"o",
@@ -30,13 +30,13 @@ keymap(
 	opts
 )
 
-keymap("n", "<leader>hs", "<cmd>lua require'hop'.hint_patterns()<cr>", opts)
+keymap("n", "<leader><leader>s", "<cmd>lua require'hop'.hint_patterns()<cr>", opts)
 
-keymap("n", "<leader>h(", "<cmd>lua require'hop'.hint_patterns({}, '(')<cr>", opts)
-keymap("n", "<leader>h)", "<cmd>lua require'hop'.hint_patterns({}, ')')<cr>", opts)
-keymap("n", "<leader>h;", "<cmd>lua require'hop'.hint_patterns({}, ';')<cr>", opts)
-keymap("n", "<leader>h<", "<cmd>lua require'hop'.hint_patterns({}, '<')<cr>", opts)
-keymap("n", "<leader>h>", "<cmd>lua require'hop'.hint_patterns({}, '>')<cr>", opts)
+keymap("n", "<leader><leader>(", "<cmd>lua require'hop'.hint_patterns({}, '(')<cr>", opts)
+keymap("n", "<leader><leader>)", "<cmd>lua require'hop'.hint_patterns({}, ')')<cr>", opts)
+keymap("n", "<leader><leader>;", "<cmd>lua require'hop'.hint_patterns({}, ';')<cr>", opts)
+keymap("n", "<leader><leader><", "<cmd>lua require'hop'.hint_patterns({}, '<')<cr>", opts)
+keymap("n", "<leader><leader>>", "<cmd>lua require'hop'.hint_patterns({}, '>')<cr>", opts)
 
 local directions = require('hop.hint').HintDirection
 set('', 'f', function()
