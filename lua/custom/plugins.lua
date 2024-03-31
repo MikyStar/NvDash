@@ -163,8 +163,8 @@ local plugins = {
     -- lazy = false,
     config = function()
       require("sunglasses").setup {
-        file_type = "TINT",
-        filter_percent = 0.5,
+        file_type = "SHADE",
+        filter_percent = 0.4,
       }
     end,
     event = "UIEnter",
