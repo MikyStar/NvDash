@@ -111,6 +111,18 @@ local plugins = {
     end,
   },
 
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    lazy = false,
+    main = "ibl",
+
+    config = function()
+      require "custom.configs.indent-blankline"
+    end,
+
+    opts = {},
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
