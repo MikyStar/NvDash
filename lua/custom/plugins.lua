@@ -128,12 +128,20 @@ local plugins = {
     lazy = false,
     config = function()
       require("rainbow-delimiters.setup").setup {
+        query = {
+          [""] = "rainbow-delimiters",
+          javascript = "rainbow-parens",
+          tsx = "rainbow-parens",
+          typescript = "rainbow-parens",
+        },
         highlight = {
           "RainbowDelimiterBlue",
           "RainbowDelimiterViolet",
-          "RainbowDelimiterGreen",
-          "RainbowDelimiterCyan",
           "RainbowDelimiterYellow",
+          "RainbowDelimiterGreen",
+          "RainbowDelimiterRed",
+          "RainbowDelimiterCyan",
+          "RainbowDelimiterOrange",
         },
       }
     end,
