@@ -123,6 +123,22 @@ local plugins = {
     opts = {},
   },
 
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    lazy = false,
+    config = function()
+      require("rainbow-delimiters.setup").setup {
+        highlight = {
+          "RainbowDelimiterBlue",
+          "RainbowDelimiterViolet",
+          "RainbowDelimiterGreen",
+          "RainbowDelimiterCyan",
+          "RainbowDelimiterYellow",
+        },
+      }
+    end,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
