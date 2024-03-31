@@ -139,9 +139,9 @@ local plugins = {
           "RainbowDelimiterViolet",
           "RainbowDelimiterYellow",
           "RainbowDelimiterGreen",
+          "RainbowDelimiterOrange",
           "RainbowDelimiterRed",
           "RainbowDelimiterCyan",
-          "RainbowDelimiterOrange",
         },
       }
     end,
