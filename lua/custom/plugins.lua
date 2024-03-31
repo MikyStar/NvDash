@@ -158,6 +158,18 @@ local plugins = {
     end,
   },
 
+  {
+    "miversen33/sunglasses.nvim",
+    -- lazy = false,
+    config = function()
+      require("sunglasses").setup {
+        file_type = "TINT",
+        filter_percent = 0.5,
+      }
+    end,
+    event = "UIEnter",
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
