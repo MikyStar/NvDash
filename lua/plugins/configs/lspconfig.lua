@@ -20,7 +20,18 @@ M.on_attach = function(client, bufnr)
     client.server_capabilities.semanticTokensProvider = nil
   end
 
-  if client.server_capabilities.document_formatting then
+  local eslintFixableExt = { "javascript", "javascriptreact", "typescript", "typescriptreact" }
+  local function has_value(tab, val)
+    for index, value in ipairs(tab) do
+      if value == val then
+        return true
+      end
+    end
+
+    return false
+  end
+
+  if has_value(eslintFixableExt, vim.bo.filetype) then
     vim.api.nvim_create_autocmd("BufWritePre", {
       buffer = bufnr,
       command = "EslintFixAll",
