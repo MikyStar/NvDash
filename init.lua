@@ -32,3 +32,7 @@ require "plugins"
 vim.api.nvim_create_user_command("ClearBuffers", function()
   vim.cmd("%bd")
 end, {})
+
+vim.api.nvim_create_user_command("ClearQuickfixes", function()
+  vim.cmd("cexpr []")
+end, {})
