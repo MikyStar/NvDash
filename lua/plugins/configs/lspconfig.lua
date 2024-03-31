@@ -20,10 +20,12 @@ M.on_attach = function(client, bufnr)
     client.server_capabilities.semanticTokensProvider = nil
   end
 
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    buffer = bufnr,
-    command = "EslintFixAll",
-  })
+  if client.server_capabilities.document_formatting then
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end
 end
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
