@@ -11,6 +11,8 @@ M.general = {
 
     ["<leader>sv"] = { "<cmd> vsplit <CR>" },
     ["<leader>sh"] = { "<cmd> split <CR>" },
+
+    ["<leader>ww"] = { "<cmd> lua require('nvim-window').pick()<CR>" },
   },
   v = {
     [">"] = { ">gv", "indent"},

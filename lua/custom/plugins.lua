@@ -147,6 +147,17 @@ local plugins = {
     end,
   },
 
+  {
+    "yorickpeterse/nvim-window",
+    lazy = false,
+    config = function()
+      require("nvim-window").setup {
+        hint_hl = "Bold",
+        border = "single",
+      }
+    end,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
