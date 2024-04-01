@@ -170,6 +170,14 @@ local plugins = {
     event = "UIEnter",
   },
 
+  {
+    "windwp/nvim-ts-autotag",
+    lazy = false,
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
