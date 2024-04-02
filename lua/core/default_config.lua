@@ -4,6 +4,20 @@ M.options = {
   nvchad_branch = "v2.0",
 }
 
+local handle = io.popen "pwd"
+local pwd = handle:read()
+handle:close()
+
+local pwdLine = pwd
+local spaceToFill = (50 - string.len(pwd))
+for i = 0, spaceToFill do
+  if i % 2 == 0 then
+    pwdLine = pwdLine .. " "
+  else
+    pwdLine = " " .. pwdLine
+  end
+end
+
 M.ui = {
   ------------------------------- base46 -------------------------------------
   -- hl = highlights
@@ -58,6 +72,9 @@ M.ui = {
       " ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
       " ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
       " ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+      "                                                    ",
+      "                                                    ",
+      pwdLine,
       "                                                    ",
     },
 
