@@ -36,3 +36,7 @@ end, {})
 vim.api.nvim_create_user_command("ClearQuickfixes", function()
   vim.cmd("cexpr []")
 end, {})
+
+vim.api.nvim_create_user_command("CloseOtherBuffers", function()
+  vim.cmd("%bdelete|edit #")
+end, {})
