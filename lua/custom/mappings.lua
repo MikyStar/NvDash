@@ -13,7 +13,9 @@ M.general = {
     ["<leader>sh"] = { "<cmd> split <CR>" },
 
     ["<leader>ww"] = { "<cmd> lua require('nvim-window').pick()<CR>" },
+
     ["<C-p>"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
+    ["<leader>fr"] = { "<cmd> Telescope resume <CR>", "Resume last Telescope session" },
 
     ["<leader>gn"] = { "<cmd> Gitsigns next_hunk <CR>", "Git next hunk" },
     ["<leader>gp"] = { "<cmd> Gitsigns prev_hunk <CR>", "Git previous hunk" },
