@@ -29,11 +29,11 @@ dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
 require "plugins"
 
-vim.api.nvim_create_user_command("ClearBuffers", function()
+vim.api.nvim_create_user_command("CloseBuffers", function()
   vim.cmd("%bd")
 end, {})
 
-vim.api.nvim_create_user_command("ClearQuickfixes", function()
+vim.api.nvim_create_user_command("CloseQuickfixes", function()
   vim.cmd("cexpr []")
 end, {})
 
