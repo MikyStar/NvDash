@@ -113,3 +113,6 @@ local new_cmd = vim.api.nvim_create_user_command
 new_cmd("NvChadUpdate", function()
   require "nvchad.updater"()
 end, {})
+
+-- Map back the dot key as it was unset by something else
+vim.api.nvim_set_keymap('n', '.', '.', { noremap = true, silent = true })
