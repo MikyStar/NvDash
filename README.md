@@ -36,6 +36,8 @@ git clone https://github.com/MikyStar/NvDash ~/.config/nvim/
 
 ### Commands
 
+- `:Lazy`: Open plugin manager
+- `:Mason`: Open LSP manager
 - `:Glow`: Markdown preview
 - `:Outline`: Show code outline
 
@@ -46,10 +48,10 @@ git clone https://github.com/MikyStar/NvDash ~/.config/nvim/
 - `<leader><leader>s`: Hop search
 - `<leader><leader>w`: Hop word
 
-- `<leader>lg`: LazyGit _(q to exit)_
+- `<leader>gg`: LazyGit _(q to exit)_
 
-- `<leader>fm`: Format doc
-- `<leader>ca`: LSP code action
+- `<leader>la`: LSP code action
+- `<leader>lb`: Format doc
 - `K`: LSP hover
 
 - `(in NvimTree) g?`: Help on NvimTree
