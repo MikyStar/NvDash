@@ -102,6 +102,36 @@ local plugins = {
   },
 
   {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+      bigfile = { enabled = true },
+      -- dashboard = { enabled = true },
+      explorer = { enabled = true },
+      indent = { enabled = true },
+      input = { enabled = true },
+      picker = { enabledu= true },
+      notifier = { enabled = true },
+      quickfile = { enabled = true },
+      scope = { enabled = true },
+      scroll = { enabled = true },
+      statuscolumn = { enabled = true },
+      words = { enabled = true },
+    },
+    keys={
+       { "<leader>sn", function() Snacks.picker.notifications() end, desc = "Notification History" },
+       { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command history" },
+       { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+       { "<leader>su", function() Snacks.picker.undo() end, desc = "Undo history" },
+       { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
+    },
+  },
+
+  {
     "tzachar/local-highlight.nvim",
     lazy = false,
     config = function()
