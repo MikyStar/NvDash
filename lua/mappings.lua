@@ -1,10 +1,52 @@
 require "nvchad.mappings"
 
--- add yours here
-
 local map = vim.keymap.set
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
+--------------------------------------------------------------------
+----------------------- Normal mode
+
+map("n", "<Esc>", "<cmd> noh <CR>", { desc = "Clear highlights" })
+
+-- switch between windows
+map("n", "<C-h>", "<C-w>h", { desc = "Window left" })
+map("n", "<C-l>", "<C-w>l", { desc = "Window right" })
+map("n", "<C-j>", "<C-w>j", { desc = "Window down" })
+map("n", "<C-k>", "<C-w>k", { desc = "Window up" })
+
+-- save
+map("n", "<C-s>", "<cmd> w <CR>", { desc = "Save file" })
+
+-- Copy all
+map("n", "<C-c>", "<cmd> %y+ <CR>", { desc = "Copy whole file" })
+
+-- line numbers
+map("n", "<leader>n", "<cmd> set nu! <CR>", { desc = "Toggle line number" })
+map("n", "<leader>rn", "<cmd> set rnu! <CR>", { desc = "Toggle relative number" })
+map("n", "<C-z>", "")
+
+-- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
+-- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
+-- empty mode is same as using <cmd> :map
+-- also don't use g[j|k] when in operator pending mode, so it doesn't alter d, y or c behaviour
+map("n", "j", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { desc = "Move down" })
+map("n", "k", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { desc = "Move up" })
+map("n", "<Up>", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { desc = "Move down" })
+map("n", "<Down>", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { desc = "Move up" })
+
+-- new buffer
+map("n", "<leader>b", "<cmd> enew <CR>", { desc = "New buffer" })
+
+map("n", "<leader>ch", "<cmd> NvCheatsheet <CR>", { desc = "Mapping cheatsheet" })
+
+map("n", "<leader>lb", function() vim.lsp.buf.format { async = true } end, { desc = "LSP formatting" })
+
+--------------------------------------------------------------------
+----------------------- Interactive mode
+
 map("i", "jk", "<ESC>")
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+--------------------------------------------------------------------
+----------------------- Visual mode
+
+--------------------------------------------------------------------
+----------------------- Other mode
