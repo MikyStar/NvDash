@@ -9,11 +9,6 @@ local M = {}
 
 M.base46 = {
 	theme = "radium",
-
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
 }
 
 --------------------------------------------------------------------
@@ -24,29 +19,29 @@ local pwd = handle:read()
 local pwdLine = pwd
 local spaceToFill = (52 - string.len(pwd))
 for i = 0, spaceToFill do
-  if i % 2 == 0 then
-    pwdLine = pwdLine .. " "
-  else
-    pwdLine = " " .. pwdLine
-  end
+	if i % 2 == 0 then
+		pwdLine = pwdLine .. " "
+	else
+		pwdLine = " " .. pwdLine
+	end
 end
 
 M.nvdash = {
 	load_on_startup = true,
 
 	header = {
-      "                                                     ",
+			"                                                     ",
 			" ███╗   ██╗██╗   ██╗██████╗  █████╗ ███████╗██╗  ██╗ ",
 			" ████╗  ██║██║   ██║██╔══██╗██╔══██╗██╔════╝██║  ██║ ",
 			" ██╔██╗ ██║██║   ██║██║  ██║███████║███████╗███████║ ",
 			" ██║╚██╗██║╚██╗ ██╔╝██║  ██║██╔══██║╚════██║██╔══██║ ",
 			" ██║ ╚████║ ╚████╔╝ ██████╔╝██║  ██║███████║██║  ██║ ",
 			" ╚═╝  ╚═══╝  ╚═══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ",
-      "                                                     ",
-      pwdLine,
-      "                                                     ",
-      "                                                     ",
-    },
+			"                                                     ",
+			pwdLine,
+			"                                                     ",
+			"                                                     ",
+		},
 
 	buttons = {
 		{ txt = "󰈚  Recent Files", keys = "fo", cmd = "Telescope oldfiles" },
@@ -62,8 +57,8 @@ M.nvdash = {
 M.ui = {
 	cmp = {
 		abbr_maxwidth = 60,
-    -- for tailwind, css lsp etc
-    format_colors = {
+		-- for tailwind, css lsp etc
+		format_colors = {
 			lsp = true,
 			icon = "󱓻" },
 	},
@@ -72,5 +67,64 @@ M.ui = {
 		show_numbers = true,
 	},
 }
+
+--------------------------------------------------------------------
+
+M.nvim_tree = {
+	git = {
+		enable = true,
+	},
+
+	filters = {
+		git_ignored = false,
+	},
+
+	renderer = {
+		highlight_git = true,
+		icons = {
+			show = {
+				git = true,
+			},
+		},
+	}
+}
+
+--------------------------------------------------------------------
+
+M.mason = {
+	ensure_installed = {
+		-- lua stuff
+		"lua-language-server",
+		"stylua",
+
+		-- c/cpp stuff
+		"clangd",
+		"clang-format",
+
+		-- python
+		"python-lsp-server",
+		"pydocstring",
+		"pylint",
+		"pyright",
+
+		-- web
+		"css-lsp",
+		"deno",
+		"eslint-lsp",
+		"eslint_d",
+		"graphql-language-cli",
+		"html-lsp",
+		"prettier",
+		"tailwindcss-language-server",
+		"typescript-language-server",
+
+		-- other
+		"rust-analyzer",
+
+		"editorconfig-checker",
+	},
+}
+
+--------------------------------------------------------------------
 
 return M

@@ -29,6 +29,13 @@ rm -rf ~/.local/share/nvim
 git clone https://github.com/MikyStar/NvDash ~/.config/nvim/
 ```
 
+4. Install LSP with Mason
+
+```sh
+# Open nvim and run
+:MasonInstallAll
+```
+
 ## Added plugins
 
 - [hop](https://github.com/smoka7/hop.nvim)
