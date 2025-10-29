@@ -5,6 +5,7 @@ local map = vim.keymap.set
 --------------------------------------------------------------------
 ----------------------- Normal mode
 
+-- Native NVIM API
 map("n", "<C-e>", "5<C-e>", { desc = "Scroll down 5 lines" })
 map("n", "<C-y>", "5<C-y>", { desc = "Scroll up 5 lines" })
 
@@ -14,34 +15,22 @@ map("n", "<S-Up>", ":m .-2<CR>==", { desc = "Move line up" })
 map("n", "<leader>sv", "<cmd> vsplit <CR>", { desc = "Split vertical" })
 map("n", "<leader>sh", "<cmd> split <CR>", { desc = "Split horizontal" })
 
-map("n", "<leader>ww", "<cmd> lua require('nvim-window').pick()<CR>", { desc = "Pick window" })
-
-map("n", "<C-p>", "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", { desc = "Find files" })
-map("n", "<leader>fr", "<cmd> Telescope resume <CR>", { desc = "Resume last Telescope session" })
-
-map("n", "<leader>gn", "<cmd> Gitsigns next_hunk <CR>", { desc = "Next git hunk" })
-map("n", "<leader>gp", "<cmd> Gitsigns prev_hunk <CR>", { desc = "Previous git hunk" })
-map("n", "<leader>gr", "<cmd> Gitsigns reset_hunk <CR>", { desc = "Reset git hunk" })
-map("n", "<leader>gb", "<cmd> Gitsigns blame_line <CR>", { desc = "Blame git hunk" })
-
 map("n", "<Esc>", "<cmd> noh <CR>", { desc = "Clear highlights" })
 
--- switch between windows
+map("n", "<C-s>", "<cmd> w <CR>", { desc = "Save file" })
+
+map("n", "<C-c>", "<cmd> %y+ <CR>", { desc = "Copy whole file" })
+
+map("n", "<leader>b", "<cmd> enew <CR>", { desc = "New buffer" })
+
+map("n", "<leader>n", "<cmd> set nu! <CR>", { desc = "Toggle line number" })
+map("n", "<leader>rn", "<cmd> set rnu! <CR>", { desc = "Toggle relative number" })
+map("n", "<C-z>", "")
+
 map("n", "<C-h>", "<C-w>h", { desc = "Window left" })
 map("n", "<C-l>", "<C-w>l", { desc = "Window right" })
 map("n", "<C-j>", "<C-w>j", { desc = "Window down" })
 map("n", "<C-k>", "<C-w>k", { desc = "Window up" })
-
--- save
-map("n", "<C-s>", "<cmd> w <CR>", { desc = "Save file" })
-
--- Copy all
-map("n", "<C-c>", "<cmd> %y+ <CR>", { desc = "Copy whole file" })
-
--- line numbers
-map("n", "<leader>n", "<cmd> set nu! <CR>", { desc = "Toggle line number" })
-map("n", "<leader>rn", "<cmd> set rnu! <CR>", { desc = "Toggle relative number" })
-map("n", "<C-z>", "")
 
 -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
 -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
@@ -52,8 +41,14 @@ map("n", "k", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { desc = "Move up"
 map("n", "<Up>", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { desc = "Move down", expr = true })
 map("n", "<Down>", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { desc = "Move up", expr = true })
 
--- new buffer
-map("n", "<leader>b", "<cmd> enew <CR>", { desc = "New buffer" })
+-- Nvim-window
+map("n", "<leader>ww", "<cmd> lua require('nvim-window').pick()<CR>", { desc = "Pick window" })
+
+-- Gitsigns
+map("n", "<leader>gn", "<cmd> Gitsigns next_hunk <CR>", { desc = "Next git hunk" })
+map("n", "<leader>gp", "<cmd> Gitsigns prev_hunk <CR>", { desc = "Previous git hunk" })
+map("n", "<leader>gr", "<cmd> Gitsigns reset_hunk <CR>", { desc = "Reset git hunk" })
+map("n", "<leader>gb", "<cmd> Gitsigns blame_line <CR>", { desc = "Blame git hunk" })
 
 map("n", "<leader>ch", "<cmd> NvCheatsheet <CR>", { desc = "Mapping cheatsheet" })
 
@@ -85,9 +80,11 @@ map("n", "<leader>fq", "<cmd> Telescope quickfix <CR>", { desc = "Quickfixes" })
 map("n", "<leader>gc", "<cmd> Telescope git_commits <CR>", { desc = "Git commits" })
 map("n", "<leader>gs", "<cmd> Telescope git_status <CR>", { desc = "Git status" })
 map("n", "<leader>fm", "<cmd> Telescope marks <CR>", { desc = "Bookmarks" })
+map("n", "<C-p>", "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", { desc = "Find files" })
+map("n", "<leader>fr", "<cmd> Telescope resume <CR>", { desc = "Resume last Telescope session" })
 
 --------------------------------------------------------------------
------------------------ Interactive mode
+----------------------- Insert mode
 
 -- go to  beginning and end
 map("i", "<C-b>", "<ESC>^i", { desc = "Beginning of line" })
