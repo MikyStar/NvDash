@@ -59,15 +59,18 @@ M.nvdash = {
 
 --------------------------------------------------------------------
 
-M.cheatsheet = {
-	theme = "grid"
+M.ui = {
+	cmp = {
+		abbr_maxwidth = 60,
+    -- for tailwind, css lsp etc
+    format_colors = {
+			lsp = true,
+			icon = "󱓻" },
+	},
+
+	tabufline = {
+		show_numbers = true,
+	},
 }
-
-
--- M.ui = {
---       tabufline = {
---          lazyload = false
---      }
--- }
 
 return M
