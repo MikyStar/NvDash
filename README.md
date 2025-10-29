@@ -14,6 +14,7 @@ make CMAKE_INSTALL_PREFIX=$HOME/Repos/neovim # If already builded run 'make dist
 make install
 sudo -s make install
 ```
+
 2. [LazyGit](https://github.com/jesseduffield/lazygit)
 
 [Install](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#binary-releases)
@@ -21,6 +22,10 @@ sudo -s make install
 3. Import NvDash config
 
 ```sh
+# Remove previously configured nvim folders
+rm -rf ~/.cache/nvim
+rm -rf ~/.local/share/nvim
+
 git clone https://github.com/MikyStar/NvDash ~/.config/nvim/
 ```
 

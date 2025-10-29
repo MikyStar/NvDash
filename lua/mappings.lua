@@ -28,10 +28,10 @@ map("n", "<C-z>", "")
 -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
 -- empty mode is same as using <cmd> :map
 -- also don't use g[j|k] when in operator pending mode, so it doesn't alter d, y or c behaviour
-map("n", "j", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { desc = "Move down" })
-map("n", "k", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { desc = "Move up" })
-map("n", "<Up>", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { desc = "Move down" })
-map("n", "<Down>", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { desc = "Move up" })
+map("n", "j", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { desc = "Move down", expr = true })
+map("n", "k", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { desc = "Move up", expr = true })
+map("n", "<Up>", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { desc = "Move down", expr = true })
+map("n", "<Down>", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { desc = "Move up", expr = true })
 
 -- new buffer
 map("n", "<leader>b", "<cmd> enew <CR>", { desc = "New buffer" })
@@ -43,10 +43,29 @@ map("n", "<leader>lb", function() vim.lsp.buf.format { async = true } end, { des
 --------------------------------------------------------------------
 ----------------------- Interactive mode
 
-map("i", "jk", "<ESC>")
+-- go to  beginning and end
+map("i", "<C-b>", "<ESC>^i", { desc = "Beginning of line" })
+map("i", "<C-e>", "<End>", { desc = "End of line" })
+
+-- navigate within insert mode
+map("i", "<C-h>", "<Left>", { desc = "Move left" })
+map("i", "<C-l>", "<Right>", { desc = "Move right" })
+map("i", "<C-j>", "<Down>", { desc = "Move down" })
+map("i", "<C-k>", "<Up>", { desc = "Move up" })
 
 --------------------------------------------------------------------
 ----------------------- Visual mode
 
+map("v", "<Up>", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { desc = "Move up", expr = true })
+map("v", "<Down>", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { desc = "Move down", expr = true })
+map("v", "<", "<gv", { desc = "Unindent line" })
+map("v", ">", ">gv", { desc = "Indent line" })
+map("v", "<C-z>", "")
+
+--------------------------------------------------------------------
+----------------------- Terminal mode
+
 --------------------------------------------------------------------
 ----------------------- Other mode
+
+map("", "", "", { desc = "" })
