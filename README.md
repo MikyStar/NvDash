@@ -1,4 +1,4 @@
-# NvDash
+# Neo-IDE
 
 A customized [NvChad](https://nvchad.com)
 
@@ -37,14 +37,14 @@ sudo -s make install
 
 [Install](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#binary-releases)
 
-3. Import NvDash config
+3. Import Neo-IDE config
 
 ```sh
 # Remove previously configured nvim folders
 rm -rf ~/.cache/nvim
 rm -rf ~/.local/share/nvim
 
-git clone https://github.com/MikyStar/NvDash ~/.config/nvim/
+git clone https://github.com/MikyStar/Neo-IDE ~/.config/nvim/
 ```
 
 4. Install LSP with Mason
