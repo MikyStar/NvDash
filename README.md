@@ -1,6 +1,8 @@
-# Neo-IDE
+<h1 align="center">Neo-IDE</h1>
 
-A customized [NvChad](https://nvchad.com)
+<div align="center">
+  <i>A customized <a href="https://nvchad.com">NvChad</a> fork</i>
+</div>
 
 ![use](./assets/use.gif)
 
@@ -98,19 +100,47 @@ _Here are only listed a few important ones, for more see lua/mappings.lua_
 ## Gallery
 
 ![splashscreen](./assets/splashscreen.png)
-_<center>Splashscreen</center>_
+
+<div align="center">
+  <i>Splashscreen</i>
+</div>
+
+---
 
 ![splitted view](./assets/splitted-view.png)
-_<center>Dimmed splitted view and folder navigator</center>_
+
+<div align="center">
+  <i>Splitted view and file explorer</i>
+</div>
+
+---
 
 ![hop and outline](./assets/hop-outline.png)
-_<center>Hop and Outline</center>_
+
+<div align="center">
+  <i>Hop and Outline</i>
+</div>
+
+---
 
 ![lazygit](./assets/lazygit.png)
-_<center>Lazygit</center>_
+
+<div align="center">
+  <i>LazyGit</i>
+</div>
+
+---
 
 ![telescope](./assets/telescope.png)
-_<center>Telescope</center>_
+
+<div align="center">
+  <i>Telescope</i>
+</div>
+
+---
 
 ![snacks](./assets/snacks.png)
-_<center>Snacks</center>_
+
+<div align="center">
+  <i>Snacks</i>
+</div>
