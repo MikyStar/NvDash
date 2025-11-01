@@ -121,43 +121,23 @@ map("n", "<leader><leader>>", "<cmd>lua require'hop'.hint_patterns({}, '>')<cr>"
 
 map("n", "<leader><leader>;", "<cmd>lua require'hop'.hint_patterns({}, ';')<cr>", { noremap = true, silent = true })
 
-map("o", "f",
+map("", "f",
   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>",
   { noremap = true, silent = true }
 )
-map("o", "F",
+map("", "F",
   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = false })<cr>",
   { noremap = true, silent = true }
 )
 
-local directions = require('hop.hint').HintDirection
-
-map('', 'f', function()
-  hop.hint_char1({
-    direction = directions.AFTER_CURSOR,
-    current_line_only = true
-  })
-end, { remap = true })
-map('', 'F', function()
-  hop.hint_char1({
-    direction = directions.BEFORE_CURSOR,
-    current_line_only = true
-  })
-end, { remap = true })
-map('', 't', function()
-  hop.hint_char1({
-    direction = directions.AFTER_CURSOR,
-    current_line_only = true,
-    hint_offset = -1
-  })
-end, { remap = true })
-map('', 'T', function()
-  hop.hint_char1({
-    direction = directions.BEFORE_CURSOR,
-    current_line_only = true,
-    hint_offset = 1
-  })
-end, { remap = true })
+map("", "t",
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>",
+  { noremap = true, silent = true }
+)
+map("", "T",
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = false })<cr>",
+  { noremap = true, silent = true }
+)
 
 --------------------------------------------------------------------
 ----------------------- Insert mode
