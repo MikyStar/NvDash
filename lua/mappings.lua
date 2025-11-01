@@ -62,15 +62,17 @@ map("n", "<leader>D", function() vim.lsp.buf.type_definition() end, { desc = "LS
 map("n", "gd", function() vim.lsp.buf.definition() end, { desc = "LSP definition" })
 
 map("n", "K", function() vim.lsp.buf.hover() end, { desc = "LSP hover" })
-map("n", "gi", function()  vim.lsp.buf.implementation() end, { desc = "LSP implementation" })
+map("n", "gi", function() vim.lsp.buf.implementation() end, { desc = "LSP implementation" })
 map("n", "gr", function() vim.lsp.buf.references() end, { desc = "LSP references" })
 map("n", "<leader>ls", function() vim.lsp.buf.signature_help() end, { desc = "LSP signature help" })
 map("n", "<leader>lr", function() require("nvchad.renamer").open() end, { desc = "LSP rename" })
-map("n", "<leader>la", function()  vim.lsp.buf.code_action() end, { desc = "LSP code action" })
+map("n", "<leader>la", function() vim.lsp.buf.code_action() end, { desc = "LSP code action" })
 map("n", "<leader>lf", function() vim.diagnostic.open_float { border = "rounded" } end, { desc = "Floating diagnostic" })
 
-map("n", "<leader>lp", function() vim.diagnostic.goto_prev { float = { border = "rounded" } } end, { desc = "LSP goto previous" })
-map("n", "<leader>ln", function() vim.diagnostic.goto_next { float = { border = "rounded" } } end, { desc = "LSP goto next" })
+map("n", "<leader>lp", function() vim.diagnostic.goto_prev { float = { border = "rounded" } } end,
+  { desc = "LSP goto previous" })
+map("n", "<leader>ln", function() vim.diagnostic.goto_next { float = { border = "rounded" } } end,
+  { desc = "LSP goto next" })
 map("n", "<leader>q", function() vim.diagnostic.setloclist() end, { desc = "Diagnostic setloclist" })
 
 -- Telescope
@@ -96,7 +98,11 @@ map("n", "<leader>oo", "<cmd> Outline <CR>", { desc = "File outline" })
 -- Hop
 map("x", "<leader><leader>w", "<cmd>HopWord<cr>", { noremap = true, silent = true })
 map("n", "<leader><leader>w", "<cmd>HopWord<cr>", { noremap = true, silent = true })
-map("n", "<leader><leader>W", "<cmd>HopWordMW<cr>", { noremap = true, silent = true }) -- multiwindow
+map("n", "<leader><leader>W", "<cmd>HopWordMW<cr>", { noremap = true, silent = true })                                                                           -- multiwindow
+
+map("n", "<leader><leader>e",
+  "<cmd>lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END })<cr>",
+  { noremap = true, silent = true })                                                                                                                             -- multiwindow
 
 map("n", "<leader><leader>l", "<cmd>HopLineStart<cr>", { noremap = true, silent = true })
 map("x", "<leader><leader>l", "<cmd>HopLineStart<cr>", { noremap = true, silent = true })
@@ -117,13 +123,13 @@ map("n", "<leader><leader>>", "<cmd>lua require'hop'.hint_patterns({}, '>')<cr>"
 
 map("n", "<leader><leader>;", "<cmd>lua require'hop'.hint_patterns({}, ';')<cr>", { noremap = true, silent = true })
 
-map( "o", "f",
-	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>",
-	{ noremap = true, silent = true }
+map("o", "f",
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>",
+  { noremap = true, silent = true }
 )
-map( "o", "F",
-	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = false })<cr>",
-	{ noremap = true, silent = true }
+map("o", "F",
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = false })<cr>",
+  { noremap = true, silent = true }
 )
 
 local directions = require('hop.hint').HintDirection
@@ -133,27 +139,27 @@ map('', 'f', function()
     direction = directions.AFTER_CURSOR,
     current_line_only = true
   })
-end, {remap=true})
+end, { remap = true })
 map('', 'F', function()
   hop.hint_char1({
     direction = directions.BEFORE_CURSOR,
     current_line_only = true
   })
-end, {remap=true})
+end, { remap = true })
 map('', 't', function()
   hop.hint_char1({
     direction = directions.AFTER_CURSOR,
     current_line_only = true,
     hint_offset = -1
   })
-end, {remap=true})
+end, { remap = true })
 map('', 'T', function()
   hop.hint_char1({
     direction = directions.BEFORE_CURSOR,
     current_line_only = true,
     hint_offset = 1
   })
-end, {remap=true})
+end, { remap = true })
 
 --------------------------------------------------------------------
 ----------------------- Insert mode
