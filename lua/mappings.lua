@@ -54,8 +54,6 @@ map("n", "<leader>ch", "<cmd> NvCheatsheet <CR>", { desc = "Mapping cheatsheet" 
 
 map("n", "<leader>lb", function() vim.lsp.buf.format { async = true } end, { desc = "LSP formatting" })
 
-map("n", "<leader>/", function() require("Comment.api").toggle.linewise.current() end, { desc = "Toggle comment" })
-
 -- LSP
 map("n", "gD", function() vim.lsp.buf.declaration() end, { desc = "LSP declaration" })
 map("n", "<leader>D", function() vim.lsp.buf.type_definition() end, { desc = "LSP definition type" })
@@ -98,11 +96,11 @@ map("n", "<leader>oo", "<cmd> Outline <CR>", { desc = "File outline" })
 -- Hop
 map("x", "<leader><leader>w", "<cmd>HopWord<cr>", { noremap = true, silent = true })
 map("n", "<leader><leader>w", "<cmd>HopWord<cr>", { noremap = true, silent = true })
-map("n", "<leader><leader>W", "<cmd>HopWordMW<cr>", { noremap = true, silent = true })                                                                           -- multiwindow
+map("n", "<leader><leader>W", "<cmd>HopWordMW<cr>", { noremap = true, silent = true }) -- multiwindow
 
 map("n", "<leader><leader>e",
   "<cmd>lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END })<cr>",
-  { noremap = true, silent = true })                                                                                                                             -- multiwindow
+  { noremap = true, silent = true }) -- multiwindow
 
 map("n", "<leader><leader>l", "<cmd>HopLineStart<cr>", { noremap = true, silent = true })
 map("x", "<leader><leader>l", "<cmd>HopLineStart<cr>", { noremap = true, silent = true })
@@ -187,8 +185,6 @@ map("v", "<C-z>", "")
 
 map("v", "<S-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 map("v", "<S-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
-
-map("v", "<leader>/", function() require("Comment.api").toggle.linewise.current() end, { desc = "Toggle comment" })
 
 --------------------------------------------------------------------
 ----------------------- Other mode
