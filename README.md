@@ -22,9 +22,11 @@
 
 ## Install
 
-1. [NeoVim nightly](https://github.com/neovim/neovim/blob/master/BUILD.md#quick-start)
+1. NeoVim
 
 > Required version 0.11.4
+
+**Or** use the unstable realeases by building from source [NeoVim nightly](https://github.com/neovim/neovim/blob/master/BUILD.md#quick-start)
 
 ```sh
 cd $HOME/Repos
@@ -37,7 +39,7 @@ sudo -s make install
 
 2. [LazyGit](https://github.com/jesseduffield/lazygit)
 
-[Install](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#binary-releases)
+[Install the CLI](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#binary-releases)
 
 3. Import Neo-IDE config
 
@@ -49,12 +51,16 @@ rm -rf ~/.local/share/nvim
 git clone https://github.com/MikyStar/Neo-IDE ~/.config/nvim/
 ```
 
-4. Install LSP with Mason
+4. Install LSPs with Mason
+
+Already supported languages are _rust, python, lua, C, C++, JS/TS, JSX/TSX, HTML, CSS, TailWind_
 
 ```sh
 # Open nvim and run
 :MasonInstallAll
 ```
+
+> You can install more LSPs through Mason
 
 ## CheatSheat
 
@@ -66,6 +72,7 @@ git clone https://github.com/MikyStar/Neo-IDE ~/.config/nvim/
 - `:Mason`: Open LSP manager
 - `:Glow`: Markdown preview
 - `:Outline`: Show code outline
+- ...
 
 #### User defined
 
@@ -96,6 +103,8 @@ _Here are only listed a few important ones, for more see lua/mappings.lua_
 - `<leader>sn`: Open notifcations
 
 - `(in NvimTree) g?`: Help on NvimTree
+
+- ...
 
 ## Gallery
 
